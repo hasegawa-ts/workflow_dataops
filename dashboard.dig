@@ -1,0 +1,23 @@
+timezone: Asia/Tokyo
+
+schedule:
+  daily>: 6:00:00
+  
++create_products_mst:
+  call>: products_mst.dig
+
++web_data:
+  call>: web_data.dig
+
++sales:
+  call>: sales.dig
+
++web_data_monthly:
+  td>: web_data_monthly.sql
+  database: dashboard_sales_and_accesslog
+  engine  : presto
+  
++sales_montyly:
+  td>: sales_monthly.sql
+  database: dashboard_sales_and_accesslog
+  engine  : presto
