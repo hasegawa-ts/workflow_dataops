@@ -1,0 +1,41 @@
+_export:
+  database: products
+  engine  : hive
+
++create_products_mst:
+  _parallel: true
+  
+  +official:
+    td>: products/official.sql
+  
+  +beans:
+    td>: products/beans.sql
+  
+  +comic_alive:
+    td>: products/comic_alive.sql
+  
+  +comic_flapper:
+    td>: products/comic_flapper.sql
+
+  +comic_gene:
+    td>: products/comic_gene.sql
+
+  +dengekibunko:
+    td>: products/dengekibunko.sql
+
+  +kadokawabooks:
+    td>: products/kadokawabooks.sql
+
+  +sneakerbunko:
+    td>: products/sneakerbunko.sql
+  
+  +tsubasabunko:
+    td>: products/tsubasabunko.sql
+
+  +kimirano:
+    td>: products/kimirano.sql
+    engine: presto  
+  
+  +kadokawastore:
+    td>: products/kadokawastore.sql
+    engine: presto
